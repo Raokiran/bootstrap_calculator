@@ -29,7 +29,7 @@ function val(value) {
       if (post.length === 0) {
         exp = "Please enter the value";
       } else if (
-        ["+", "-", "/", "%", ".", "x"].includes(post[post.length - 1])
+        ["+", "-", "/", "%", ".", "*"].includes(post[post.length - 1])
       ) {
         post = [];
         exp = "Invalid Expression";
@@ -40,8 +40,8 @@ function val(value) {
       display(exp);
     } else {
       if (
-        [ "/", "%", "x"].includes(post[post.length - 1]) &&
-        [ "/", "%", "x"].includes(value)
+        [ "/", "%", "*"].includes(post[post.length - 1]) &&
+        [ "/", "%", "*"].includes(value)
       ) 
       {
         post.pop();
@@ -50,7 +50,7 @@ function val(value) {
         {
         if (
           post.length === 0 ||
-          ["+", "-", "/", "%", "x"].includes(post[post.length - 1])
+          ["+", "-", "/", "%", "*"].includes(post[post.length - 1])
         ) {
           post.push(value);
         } else {
